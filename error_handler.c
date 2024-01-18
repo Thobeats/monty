@@ -6,7 +6,7 @@
 
 void error_handler(void)
 {
-	fprintf(stderr, "usage: push integer\n");
+	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);
 }
 
@@ -18,6 +18,6 @@ void error_handler(void)
 
 void file_error(char *argv)
 {
-	fprintf(stderr, "Cannot open file %s\n", argv);
+	fprintf(stderr, "Error: Can't open file %s\n", argv);
 	exit(EXIT_FAILURE);
 }

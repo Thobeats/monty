@@ -15,7 +15,7 @@ stack_t *create_node(stack_t **stack, const int n)
 
 	if (newNode == NULL)
 	{
-		fprintf(stderr, "Malloc failed");
+		fprintf(stderr, "Error: malloc failed");
 		free(newNode);
 		return (NULL);
 	}
