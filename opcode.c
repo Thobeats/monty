@@ -10,24 +10,21 @@
 
 void opcode(stack_t **stack, unsigned int line_number, char *command)
 {
-    int i = 0;
-    instruction_t ops[] = {
-        {"push", push},
-        {"pall", pall}
-    };
+	int i = 0;
+	instruction_t ops[] = {
+		{"push", push},
+		{"pall", pall}
+	};
 
-    while (ops[i].opcode)
-    {
-        if (strcmp(ops[i].opcode, command) == 0)
-        {
-            ops[i].f(stack, line_number);
-            return;
-        }
-
-        i++;
-    }
-
-    fprintf(stderr, "L%d: unknown instruction %s\n", line_number, command);
-    exit(EXIT_FAILURE);
-    return;
+	while (ops[i].opcode)
+	{
+		if (strcmp(ops[i].opcode, command) == 0)
+		{
+			ops[i].f(stack, line_number);
+			return;
+		}
+		i++;
+	}
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, command);
+	exit(EXIT_FAILURE);
 }

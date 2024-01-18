@@ -26,5 +26,5 @@ void push(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	else
 	{
 		create_node(stack, atoi(n));
-	}	
+	}
 }
