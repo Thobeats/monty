@@ -12,8 +12,8 @@ char *oparg;
 int main(int argc, char **argv)
 {
 	FILE *fp;
-	char *buffer = NULL;
-	size_t bufsize = 0;
+	char buffer[132];
+	int bufsize = sizeof(buffer);
 	unsigned int line_number = 0;
 	char *str = NULL;
 
@@ -23,17 +23,14 @@ int main(int argc, char **argv)
 	if(fp == NULL)
 		file_error(argv[1]);
 
-	while(getline(&buffer, &bufsize, fp) != -1)
+	while(fgets(buffer, bufsize, fp) != NULL)
 	{
 		str = strtok(buffer, " \t\n");
 		oparg = strtok(NULL, " \t\n");
-		fputs(str, stdout);
-
 		line_number++;
 	}
 
 	fclose(fp);
-	free(buffer);
 
 }
 
