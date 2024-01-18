@@ -6,7 +6,7 @@ char *oparg;
  * main - The entry point of the program
  * @argc: arguement count
  * @argv: arguement array
- *
+ * Return: Success
  */
 
 int main(int argc, char **argv)
