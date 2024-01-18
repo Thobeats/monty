@@ -6,16 +6,25 @@
  * @line_number: the line of the command on the file
  */
 
-void push(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	char *n = global.argument;
 
 	if (isdigit(n[0]) == 0)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-		return;
+		if (atoi(n) < 0)
+		{
+			create_node(stack, atoi(n));
+		}
+		else
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+			return;
+		}
 	}
-
-	create_node(stack, atoi(n));
+	else
+	{
+		create_node(stack, atoi(n));
+	}	
 }

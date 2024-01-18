@@ -11,6 +11,9 @@ void pall(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	size_t c = 0;
 	stack_t *i;
 
+	if (*stack == NULL)
+		return;
+
 	i = *stack;
 	while (i->next != NULL)
 		i = i->next;

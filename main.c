@@ -36,10 +36,7 @@ int main(int argc, char **argv)
 			continue;
 		}
 		global.argument = strtok(NULL, " \t\n$");
-		if (strcmp(str, "push") == 0)
-			push(&stack, line_number);
-		if (strcmp(str, "pall") == 0)
-			pall(&stack, line_number);
+		opcode(&stack, line_number, str);
 		line_number++;
 	}
 

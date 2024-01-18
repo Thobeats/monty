@@ -39,7 +39,6 @@ typedef struct instruction_s
 
 typedef struct help
 {
-	int data_struct;
 	char *argument;
 } help;
 help global;
@@ -52,5 +51,6 @@ stack_t *create_node(stack_t **stack, const int n);
 void pall(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void push(stack_t **stack, unsigned int line_number);
 void free_list(stack_t **head);
+void opcode(stack_t **stack, unsigned int line_number, char *command);
 
 #endif
