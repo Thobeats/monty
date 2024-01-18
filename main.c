@@ -1,7 +1,5 @@
 #include "monty.h"
 
-char *oparg;
-
 /**
  * main - The entry point of the program
  * @argc: arguement count
@@ -16,6 +14,7 @@ int main(int argc, char **argv)
 	int bufsize = sizeof(buffer);
 	unsigned int line_number = 0;
 	char *str = NULL;
+	stack_t *stack = NULL;
 
 	if (argc != 2)
 		error_handler();
@@ -25,12 +24,26 @@ int main(int argc, char **argv)
 
 	while(fgets(buffer, bufsize, fp) != NULL)
 	{
-		str = strtok(buffer, " \t\n");
-		oparg = strtok(NULL, " \t\n");
+		if (*buffer == '\n')
+		{
+			line_number++;
+			continue;
+		}
+		str = strtok(buffer, " \t\n$");
+		if (!str || *str == '$')
+		{
+			line_number++;
+			continue;
+		}
+		global.argument = "1";
+		if (strcmp(str, "push") == 0)
+			push(&stack, line_number);
+		if (strcmp(str, "pall") == 0)
+			pall(&stack, line_number);
 		line_number++;
 	}
 
 	fclose(fp);
-
+	return (1);
 }
 

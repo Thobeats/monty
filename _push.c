@@ -8,14 +8,13 @@
 
 void push(stack_t **stack, unsigned int line_number)
 {
-	char *n = oparg;
+	char *n = global.argument;
 
-    if ((isdigit(atoi(n))) == 0)
-    {
-        fprintf(stderr, "L%u: usage: push integer", line_number);
-        exit(EXIT_FAILURE);
-        return;
-    }
-
-
+	if ((isdigit(n)) == 0)
+	{
+		printf("%s is not a digit", n);
+		return;
+	}
+	
+	create_node(stack, atoi(n));
 }

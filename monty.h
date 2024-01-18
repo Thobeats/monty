@@ -36,9 +36,20 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+
+typedef struct help
+{
+	int data_struct;
+	char *argument;
+} help;
+help global;
+
 extern char *oparg;
 
 void error_handler(void);
 void file_error(char *argv);
+stack_t *create_node(stack_t **stack, const int n);
+void pall(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void push(stack_t **stack, unsigned int line_number);
 
 #endif
