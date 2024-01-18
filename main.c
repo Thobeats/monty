@@ -19,10 +19,10 @@ int main(int argc, char **argv)
 	if (argc != 2)
 		error_handler();
 	fp = fopen(argv[1], "r");
-	if(fp == NULL)
+	if (fp == NULL)
 		file_error(argv[1]);
 
-	while(fgets(buffer, bufsize, fp) != NULL)
+	while (fgets(buffer, bufsize, fp) != NULL)
 	{
 		if (*buffer == '\n')
 		{
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 			line_number++;
 			continue;
 		}
-		global.argument = "1";
+		global.argument = strtok(NULL, " \t\n$");
 		if (strcmp(str, "push") == 0)
 			push(&stack, line_number);
 		if (strcmp(str, "pall") == 0)
@@ -43,6 +43,7 @@ int main(int argc, char **argv)
 		line_number++;
 	}
 
+	free_list(&stack);
 	fclose(fp);
 	return (1);
 }

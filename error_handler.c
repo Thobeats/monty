@@ -2,7 +2,6 @@
 
 /**
  * error_handler - prints out any error incurred during the running process
- * 
  */
 
 void error_handler(void)
