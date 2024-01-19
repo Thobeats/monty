@@ -14,7 +14,7 @@ void opcode(stack_t **stack, unsigned int line_number, char *command)
 	instruction_t ops[] = {
 		{"push", push},
 		{"pall", pall},
-        {NULL, NULL}
+		{NULL, NULL}
 	};
 
 	while (ops[i].opcode)
