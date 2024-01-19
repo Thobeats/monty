@@ -34,7 +34,7 @@ void sub(stack_t **stack, unsigned int line_number)
 	}
 
 	i = (*stack);
-	addedNode = i->n - i->next->n;
+	addedNode = i->next->n - i->n;
 	i->next->n = addedNode;
 	i->next->prev = NULL;
 	*stack = i->next;
