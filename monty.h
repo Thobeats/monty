@@ -64,5 +64,6 @@ void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack __attribute__((unused)), unsigned int line_number __attribute__((unused)));
 int check_number(char *str);
+void sub(stack_t **stack, unsigned int line_number);
 
 #endif

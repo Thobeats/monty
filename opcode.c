@@ -19,6 +19,7 @@ void opcode(stack_t **stack, unsigned int line_number, char *command)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"sub", sub},
 		{NULL, NULL}
 	};
 
