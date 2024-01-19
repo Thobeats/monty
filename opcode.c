@@ -15,6 +15,7 @@ void opcode(stack_t **stack, unsigned int line_number, char *command)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL}
 	};
 

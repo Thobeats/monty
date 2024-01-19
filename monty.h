@@ -53,5 +53,6 @@ void push(stack_t **stack, unsigned int line_number);
 void free_list(stack_t **head);
 void opcode(stack_t **stack, unsigned int line_number, char *command);
 void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
 
 #endif
