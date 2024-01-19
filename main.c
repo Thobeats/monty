@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 	FILE *fp;
 	char buffer[132];
 	int bufsize = sizeof(buffer);
-	unsigned int line_number = 0;
+	unsigned int line_number = 1;
 	char *str = NULL;
 	stack_t *stack = NULL;
 

@@ -13,7 +13,8 @@ void opcode(stack_t **stack, unsigned int line_number, char *command)
 	int i = 0;
 	instruction_t ops[] = {
 		{"push", push},
-		{"pall", pall}
+		{"pall", pall},
+        {NULL, NULL}
 	};
 
 	while (ops[i].opcode)
