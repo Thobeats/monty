@@ -1,6 +1,6 @@
-push -144
-push 244cc
-push 34
-pall
-add
-pall
+push 1
+push 1024
+push -0
+push -1
+push -1024
+push 123a

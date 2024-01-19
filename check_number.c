@@ -16,7 +16,6 @@ int check_number(char *str)
 	{
 		if (*str != '-' && isdigit(*str) == 0)
 		{
-			printf("%c\n", *str);
 			return (0);
 		}
 		str++;
