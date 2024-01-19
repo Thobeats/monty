@@ -42,6 +42,7 @@ int main(int argc, char **argv)
 
 	free_list(&stack);
 	fclose(fp);
+	printf("\n");
 	return (1);
 }
 
