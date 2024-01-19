@@ -11,7 +11,7 @@ void push(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	char *n = global.argument;
 	char h = n[1];
 
-	if (h != '\0')
+	if (isalpha(h) != 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);

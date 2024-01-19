@@ -11,7 +11,6 @@
 stack_t *create_node(stack_t **stack, const int n)
 {
 	stack_t *newNode = malloc(sizeof(stack_t));
-	stack_t *i;
 
 	if (newNode == NULL)
 	{
@@ -22,20 +21,15 @@ stack_t *create_node(stack_t **stack, const int n)
 
 	newNode->n = n;
 	newNode->prev = NULL;
+	newNode->next = NULL;
 	if (*stack == NULL)
 	{
-		newNode->next = NULL;
 		*stack = newNode;
+		return (newNode);
 	}
-	else
-	{
-		i = *stack;
-		while (i->next != NULL)
-			i = i->next;
 
-		newNode->next = NULL;
-		newNode->prev = i;
-		i->next = newNode;
-	}
+	newNode->next = *stack;
+	(*stack)->prev = newNode;
+	*stack = newNode;
 	return (newNode);
 }
