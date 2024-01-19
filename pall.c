@@ -24,7 +24,7 @@ void pall(stack_t **stack, unsigned int line_number __attribute__((unused)))
 }
 
 /**
- * free_dlistint - frees a list
+ * free_list - frees a list
  * @head: The head of the list
  */
 

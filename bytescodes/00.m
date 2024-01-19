@@ -1,6 +1,6 @@
-push 1
-push 2
-push 3
+push -144
+push 244cc
+push 34
 pall
 add
 pall

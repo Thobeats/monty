@@ -6,7 +6,8 @@
  * @line_number: the line number
  */
 
-void nop(stack_t **stack __attribute__((unused)), unsigned int line_number __attribute__((unused)))
+void nop(stack_t **stack, unsigned int line_number)
 {
-	printf("This does nothing");
+	(void) stack;
+	(void) line_number;
 }
