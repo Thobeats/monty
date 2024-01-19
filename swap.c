@@ -21,7 +21,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	i = (*stack);
 	count = 1;
 
-	while (i != NULL)
+	while (i->next != NULL)
 	{
 		i = i->next;
 		count++;
