@@ -36,7 +36,13 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
+/**
+ * struct help - hold global variables
+ * @argument: the argument
+ *
+ * Description: hold global variables
+ * for stack, queues, LIFO, FIFO
+ */
 typedef struct help
 {
 	char *argument;
