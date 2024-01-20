@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 			continue;
 		}
 		str = strtok(buffer, " \t\n$");
-		if (!str || *str == '$')
+		if (!str || *str == '$' || *str == '#')
 		{
 			line_number++;
 			continue;
