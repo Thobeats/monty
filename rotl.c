@@ -10,21 +10,28 @@ void rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t *first;
 	stack_t *i;
+	int count;
 
 	(void)line_number;
 	if ((*stack) != NULL)
 	{
 		first = (*stack);
 		i = (*stack);
+		count = 0;
 
 		while (i->next != NULL)
 		{
 			i = i->next;
+			count++;
 		}
-		(*stack) = first->next;
-		first->next->prev = NULL;
-		i->next = first;
-		first->prev = i;
-		first->next = NULL;
+
+		if (count > 0)
+		{
+			(*stack) = first->next;
+			first->next->prev = NULL;
+			i->next = first;
+			first->prev = i;
+			first->next = NULL;
+		}
 	}
 }
