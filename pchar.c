@@ -38,6 +38,6 @@ void pchar(stack_t **stack, unsigned int line_number)
 int is_ascii(int num)
 {
 	if (num >= 0 && num <= 127)
-	       return (1);
-	return (0);	
+		return (1);
+	return (0);
 }
