@@ -25,6 +25,7 @@ void opcode(stack_t **stack, unsigned int line_number, char *command)
 		{"mod", mod},
 		{"pchar", pchar},
 		{"pstr", pstr},
+		{"rotl", rotl},
 		{NULL, NULL}
 	};
 
