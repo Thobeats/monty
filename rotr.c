@@ -10,6 +10,7 @@ void rotr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *first;
 	stack_t *i;
+	stack_t *last;
 	int count;
 
 	(void)line_number;
@@ -18,6 +19,7 @@ void rotr(stack_t **stack, unsigned int line_number)
 		first = (*stack);
 		i = (*stack);
 		count = 0;
+		last = malloc(sizeof(stack_t));
 
 		while (i->next != NULL)
 		{
@@ -27,10 +29,11 @@ void rotr(stack_t **stack, unsigned int line_number)
 
 		if (count > 0)
 		{
-			(*stack) = i;
-			i->prev = NULL;
-			i->next = first;
-			first->prev = i;
+			last->n = i->n;
+			last->prev = NULL;
+			last->next = first;
+			first->prev = last;
+			(*stack) = last;	
 		}
 	}
 }
