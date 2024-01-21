@@ -27,10 +27,10 @@ void rotr(stack_t **stack, unsigned int line_number)
 
 		if (count > 0)
 		{
+			(*stack) = i;
 			i->prev = NULL;
 			i->next = first;
 			first->prev = i;
-			(*stack) = i;
 		}
 	}
 }
