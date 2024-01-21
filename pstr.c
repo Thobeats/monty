@@ -19,13 +19,18 @@ void pstr(stack_t **stack, unsigned int line_number)
 	else
 	{
 		i = (*stack);
-		while (i->next != NULL && i->n != 0)
+		while (i != NULL && i->n != 0)
 		{
 			iscii = is_ascii(i->n);
 
 			if (iscii != 0)
 				printf("%c", i->n);
-			i = i->next;
+			else
+				break;
+			if (i->next == NULL)
+				i = NULL;
+			else
+				i = i->next;
 		}
 		printf("\n");
 
