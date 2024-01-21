@@ -19,7 +19,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 	else
 	{
 		i = (*stack);
-		while (i != NULL && i->n != 0)
+		while (i->next != NULL && i->n != 0)
 		{
 			iscii = is_ascii(i->n);
 
